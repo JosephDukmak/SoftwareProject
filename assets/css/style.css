@@ -1,0 +1,407 @@
+/*------------------------------------------------------------------
+    IMPORT FONTS
+-------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Arbutus+Slab');
+@import url('https://fonts.googleapis.com/css?family=Athiti:400,500,600');
+
+/*------------------------------------------------------------------
+    IMPORT FILES
+-------------------------------------------------------------------*/
+
+@import url(animate.css);
+@import url(font-awesome.min.css);
+@import url(superslides.css);
+@import url(baguetteBox.min.css);
+
+
+/*Custome Style*/
+
+.navbar-inverse {
+    background-color: #337ab7 !important;
+    border-color: #337ab7 !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
+}
+
+.navbar-inverse .navbar-brand {
+    color: black;
+}
+
+.nav-dash {
+     margin-bottom: 0px; 
+ }
+ .navbar {
+     border-radius: 0px; 
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.awesome-text{
+      color: #fed136 !important;
+    font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive !important;
+
+}
+ nav.sidebar, .main{
+    -webkit-transition: margin 200ms ease-out;
+      -moz-transition: margin 200ms ease-out;
+      -o-transition: margin 200ms ease-out;
+      transition: margin 200ms ease-out;
+  }
+
+  .main{
+    padding: 10px 10px 0 10px;
+  }
+
+ @media (min-width: 765px) {
+
+    .main{
+      position: absolute;
+      width: calc(100% - 40px); 
+      margin-left: 40px;
+      float: right;
+    }
+
+    nav.sidebar:hover + .main{
+      margin-left: 200px;
+    }
+
+    nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+      margin-left: 0px;
+    }
+
+    .container1 .img1 {
+        float: right;
+        padding-right:40px;
+    }
+        .container1 .img1 img {
+            width:600px;
+            height:400px;
+        }
+
+    .container1 .img2 {
+        float: left;
+        padding-left: 40px;
+        padding-top: 180px;
+    }
+
+        .container1 .img2 img {
+            width: 600px;
+            height: 400px;
+        }
+    .container1 .paragraph {
+        text-align: center;
+        padding-top:100px;
+        padding-left: 50px;
+        float: left;
+    }
+
+    .container1 .paragraph1 {
+        text-align: center;
+        padding-top: 180px;
+        padding-right: 100px;
+        float: right;
+    }
+
+    .container1 .paragraph p {
+        font-family: 'Arbutus Slab', serif;
+        font-size: 20px;
+
+    }
+        .container1 .paragraph p span {
+            color: #d0a772;
+        }
+
+    .container1 .paragraph1 p {
+        font-family: 'Arbutus Slab', serif;
+        font-size: 20px;
+    }
+
+        .container1 .paragraph1 p span {
+            color: #d0a772;
+        }
+
+
+
+
+    nav .sidebar .navbar-brand, nav.sidebar .navbar-header {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+    }
+    
+    /*nav.sidebar a{
+      padding-right: 13px;
+    }*/
+
+    nav.sidebar .navbar-nav > li:first-child{
+      border-top: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav > li{
+      border-bottom: 1px #e5e5e5 solid;
+    }
+
+    nav.sidebar .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+      padding: 0 0px 0 0px;
+    }
+
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: #777;
+    }
+
+    nav.sidebar{
+      width: 200px;
+      height: 100%;
+      //margin-left: -160px;
+      float: left;
+      margin-bottom: 0px;
+    }
+
+    nav.sidebar li {
+      width: 100%;
+    }
+/*
+    nav.sidebar:hover{
+      margin-left: 0px;
+    }*/
+
+    .forAnimate{
+      opacity: 0;
+    }
+  }
+   
+  @media (min-width: 1330px) {
+
+    .main{
+      width: calc(100% - 200px);
+      margin-left: 200px;
+    }
+
+    nav.sidebar{
+      margin-left: 0px;
+      float: left;
+    }
+
+    nav.sidebar .forAnimate{
+      opacity: 1;
+    }
+  }
+
+  nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: #CCC;
+    background-color: transparent;
+  }
+
+  nav:hover .forAnimate{
+    opacity: 1;
+  }
+  section{
+    padding-left: 15px;
+  }
+
+/*------------------------------------------------------------------
+    Slider
+-------------------------------------------------------------------*/
+
+.cover-slides {
+    height: 100vh;
+}
+
+.slides-navigation a {
+    background: #cfa671;
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 50%;
+    font-size: 20px;
+    display: block;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+}
+
+    .slides-navigation a i {
+        font-size: 40px;
+    }
+
+    .slides-navigation a:hover {
+        background: #010101;
+    }
+
+.cover-slides .container {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+    .cover-slides .container > .row {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .cover-slides .container > .row {
+        height: 100%;
+    }
+
+.btn {
+    text-transform: uppercase;
+    padding: 19px 36px;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 2px solid transparent;
+    padding: 12px 30px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: .1875rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-outline-new-white {
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #cfa671;
+}
+
+    .btn-outline-new-white:hover {
+        color: #ffffff;
+        background-color: #cfa671;
+        border-color: #cfa671;
+    }
+
+.overlay-background {
+    background: #333;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+}
+
+.cover-slides h1 {
+    font-family: 'Arbutus Slab', serif;
+    font-weight: 500;
+    font-size: 64px;
+    color: #fff;
+}
+
+.cover-slides p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.slides-pagination a {
+    border: 2px solid #ffffff;
+}
+
+    .slides-pagination a.current {
+        background: #cfa671;
+        border: 2px solid #cfa671;
+    }
+
+
+
+
+/*------------------------------------------------------------------
+    About
+-------------------------------------------------------------------*/
+
+.about-section-box {
+    padding: 70px 0px;
+}
+
+    .about-section-box .img-fluid {
+        box-shadow: -10px -10px 0px #d0a772;
+    }
+
+.inner-column {
+}
+
+    .inner-column h1 {
+        font-family: 'Arbutus Slab', serif;
+        font-size: 30px;
+        color: #010101;
+    }
+
+        .inner-column h1 span {
+            color: #d0a772;
+        }
+
+    .inner-column h4 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .inner-column p {
+        font-size: 18px;
+    }
+
+    .inner-column .btn-outline-new-white {
+        color: #d0a772;
+    }
+
+        .inner-column .btn-outline-new-white:hover {
+            color: #ffffff;
+        }
+
+
+/*------------------------------------------------------------------
+    QT
+-------------------------------------------------------------------*/
+
+
+.qt-background {
+    background: url(../img/bg8.jpg) no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    background-attachment: fixed;
+    background-position: center center;
+    position: relative;
+    margin-top:1400px;
+}
+
+    .qt-background p {
+        font-size: 35px;
+        font-weight: 300;
+        line-height: 44px;
+        color: #fff;
+        font-family: 'Arbutus Slab', serif;
+        margin-bottom: 20px;
+    }
+
+    .qt-background span {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+    }
