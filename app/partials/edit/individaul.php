@@ -26,8 +26,8 @@
 
 				<div class="col-md-4">
 				  <div class="form-group">
-				    <label for="alternat_mobile">Alternat Mobile</label>
-				    <input type="text" class="form-control" id="alternat_mobile" placeholder="Alternat Mobile" name="alternat_mobile" value="<?php echo $data['alternat_mobile']?$data['alternat_mobile']:''; ?>">
+				    <label for="alternate_mobile">alternate Mobile</label>
+				    <input type="text" class="form-control" id="alternate_mobile" placeholder="alternate Mobile" name="alternate_mobile" value="<?php echo $data['alternate_mobile']?$data['alternate_mobile']:''; ?>">
 				  </div>
 				</div>
 			</div>

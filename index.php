@@ -90,7 +90,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../crashin/images/logo00.png" alt="logo" width="80" height="80"/></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -109,7 +109,7 @@
                 echo '</li>';
               }else{
                 echo '<li class="nav-item">';
-                 echo '<a class="nav-link" href="./auth/dashboard.php">Home</a>';
+                 echo '<a class="nav-link" href="./auth/dashboard.php">Dashbord</a>';
                echo '</li>';
               }
             ?>
@@ -133,39 +133,39 @@
  <div id="slides" class="cover-slides">
 		<ul class="slides-container">
 			<li class="text-center">
-				<img src="../crashin/images/slider-01.jpg" alt="bg1">
+				<img src="imgs/slider-01.jpg" alt="slider1">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Welcome To <br> CrashIn </strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view  <br> 
-							trends to see any changes in performance over time.</p>
+							<p class="m-b-40">Welcome to our World! <br> 
+							Simple life is our concern </p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="text-center">
-				<img src="../crashin/images/slider-02.jpg" alt="bg2">
+				<img src="imgs/slider-02.jpg" alt="slider2">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Welcome To <br> CrashIn</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view  <br> 
-							trends to see any changes in performance over time.</p>
+							<p class="m-b-40">Save some cash and earn some! <br> 
+							no need for formal and tedious nonsense!</p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
 						</div>
 					</div>
 				</div>
 			</li>
 			<li class="text-center">
-				<img src="../crashin/images/slider-03.jpg" alt="bg3">
+				<img src="imgs/slider-03.jpg" alt="slider3">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Welcome To <br> CrashIn</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view  <br> 
-							trends to see any changes in performance over time.</p>
+							<p class="m-b-40">Have the perfect place for holiday! <br> 
+							with a calm and ordinary house</p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
 						</div>
 					</div>
@@ -178,8 +178,8 @@
 		</div>
 	</div>
 	<!-- End slides -->
-  <!-- Start About -->
-	<div class="about-section-box">
+   <!-- Start About -->
+   <div class="about-section-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
@@ -188,8 +188,8 @@
 				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 					<div class="inner-column">
 						<h1>What is <span>CrashIn ?</span></h1>
-						<p>its home/apartment rental that keeps everything very simple </p>
-						<p>by having the ability to post rooms or booking them, and  all this without being restricted by the rules of regular hotels or rentals, this allow smoother dealing between the room owner and the renter, many things become esier by CRASHING IN Easily!</p>
+						<p>its home/apartment rental that keeps everything very simple 
+						by having the ability to post rooms or booking them, and  all this without being restricted by the rules of regular hotels or rentals, this allow smoother dealing between the room owner and the renter, many things become easier by CRASHING IN Easily!</p>
 						<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
 					</div>
 				</div>
@@ -214,7 +214,7 @@
     <!-- Start 2 -->
 	<div class="container1">
 		<div class=" img2">
-			<img src="imgs/house1" alt="images-descriptionsomething">
+			<img src="imgs/bg" alt="images-descriptionsomething">
 		</div>
         <div class ="paragraph1">
        <p> <b> You can find multiple choices wether <span>luxury</span> or</b></p>
@@ -226,8 +226,6 @@
 
 	<!-- End 2-->
     
-
-
 	<!-- Start QT -->
 	<div class="qt-box qt-background">
 		<div class="container">
@@ -242,6 +240,8 @@
 		</div>
 	</div>
 	<!-- End QT -->
+
+
      <!-- Search -->
     <section id="search">
       <div class="container">
@@ -291,13 +291,13 @@
                 foreach ($data as $key => $value) {           
                   echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">          
                         <div class="card-block">';
-                          // echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
+                           echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Book</a>';
                          echo   '<div class="row">
                             <div class="col-4">
                             <h4 class="text-center">Owner Details</h4>';
                               echo '<p><b>Owner Name: </b>'.$value['fullname'].'</p>';
                               echo '<p><b>Mobile Number: </b>'.$value['mobile'].'</p>';
-                              echo '<p><b>Alternate Number: </b>'.$value['alternat_mobile'].'</p>';
+                              echo '<p><b>Alternate Number: </b>'.$value['alternate_mobile'].'</p>';
                               echo '<p><b>Email: </b>'.$value['email'].'</p>';
                               echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
                               if ($value['image'] !== 'uploads/') {

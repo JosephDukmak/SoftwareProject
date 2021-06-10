@@ -39,7 +39,7 @@ CREATE TABLE `cmps` (
 --
 
 INSERT INTO `cmps` (`id`, `name`, `cmp`, `username`, `fullname`) VALUES
-(1, 'f', 'f', 'admin', 'Mahantesh Kumbar');
+(1, 'f', 'f', 'admin', 'Joseph');
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ CREATE TABLE `room_rental_registrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alternat_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alternate_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -78,10 +78,10 @@ CREATE TABLE `room_rental_registrations` (
 -- Dumping data for table `room_rental_registrations`
 --
 
-INSERT INTO `room_rental_registrations` (`id`, `fullname`, `mobile`, `alternat_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `sale`, `deposit`, `plot_number`, `rooms`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
-(13, 'Mahantesh Kumbar', '2345676567', '98888787', 'admin@admin.com', 'india', 'karnataka', 'Belagavi', 'aaaaaa', '3', '12', '3', '78 nh', '2bhk', 'dsdsd', '4', 'dssd', 'uploads/', NULL, 'zx', 0, '2018-02-16 12:21:43', '2018-02-16 12:21:43', 1),
-(14, 'jelly fish', '2345676997', '', 'chet@gmrail.com', 'india', 'karnataka', 'Belagavi', '', '1232', '12', '33333', '78 nh', '1bhk', 'port road bgm', '', '', 'uploads/', NULL, NULL, 1, '2018-03-09 05:06:43', '2018-03-09 05:06:43', 2),
-(15, 'aaa', '2222222222', '', 'admin@admmmin.com', 'india', 'karnataka', 'Belagavi', '', '1232', '12666', '33333', '78 nh', '1bhk', 'port road bgm', 'wifi,pridge', 'good to see', 'uploads/Penguins.jpg', NULL, NULL, 1, '2018-04-04 11:19:09', '2018-04-04 11:19:09', 1);
+INSERT INTO `room_rental_registrations` (`id`, `fullname`, `mobile`, `alternate_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `sale`, `deposit`, `plot_number`, `rooms`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
+(13, 'Joseph', '2345676567', '98888787', 'admin@admin.com', 'india', 'karnataka', 'Belagavi', 'aaaaaa', '3', '12', '3', '78 nh', '2bhk', 'dsdsd', '4', 'dssd', 'uploads/', NULL, 'zx', 0, '2018-02-16 12:21:43', '2018-02-16 12:21:43', 1),
+(14, 'James', '2345676997', '', 'james@gmail.com', 'Palestine', 'karnataka', 'Belagavi', '', '1232', '12', '33333', '78 nh', '1bhk', 'port road bgm', '', '', 'uploads/', NULL, NULL, 1, '2018-03-09 05:06:43', '2018-03-09 05:06:43', 2),
+(15, 'Jack', '2222222222', '', 'Jack@gmail.com', 'Jordan', 'karnataka', 'Belagavi', '', '1232', '12666', '33333', '78 nh', '1bhk', 'port road bgm', 'wifi', 'good to see', 'uploads/Penguins.jpg', NULL, NULL, 1, '2018-04-04 11:19:09', '2018-04-04 11:19:09', 1);
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE `room_rental_registrations_apartment` (
   `id` int(10) UNSIGNED NOT NULL,
   `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alternat_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alternate_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -125,8 +125,8 @@ CREATE TABLE `room_rental_registrations_apartment` (
 -- Dumping data for table `room_rental_registrations_apartment`
 --
 
-INSERT INTO `room_rental_registrations_apartment` (`id`, `fullname`, `mobile`, `alternat_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `deposit`, `plot_number`, `apartment_name`, `ap_number_of_plats`, `rooms`, `floor`, `purpose`, `own`, `area`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
-(3, 'mahantesh', '2345676567', '', 'admin@admddin.com', 'india', 'karnataka', 'Belagavi', 'near ramdev', '1212', '22222', '78 nh', 'mant apartment', '101', '2bhk', '2nd', 'Residential', 'rented', '1sqr feet', 'port road bgm', 'wifi', 'well ', 'uploads/Jellyfish.jpg', NULL, NULL, 1, '2018-04-04 11:20:56', '2018-04-04 11:20:56', 1);
+INSERT INTO `room_rental_registrations_apartment` (`id`, `fullname`, `mobile`, `alternate_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `deposit`, `plot_number`, `apartment_name`, `ap_number_of_plats`, `rooms`, `floor`, `purpose`, `own`, `area`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
+(3, 'Jenny', '2345676567', '', 'admin@gmail.com', 'Palestine', 'Ramallah', 'Ramallah', 'Downtown', '1212', '22222', '78 nh', 'mant apartment', '101', '2bhk', '2nd', 'Residential', 'rented', '1sqr feet', 'port road bgm', 'wifi', 'well ', 'uploads/Jellyfish.jpg', NULL, NULL, 1, '2018-04-04 11:20:56', '2018-04-04 11:20:56', 1);
 
 -- --------------------------------------------------------
 
@@ -151,9 +151,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `mobile`, `username`, `email`, `password`, `created_at`, `updated_at`, `role`, `status`) VALUES
-(1, 'Mahantesh Kumbar', '9879879787', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL, 'admin', 1),
-(2, 'Mahantesh Kumbar', '56456565', 'manu', 'mant1@gmail.com', '9aee390f19345028f03bb16c588550e1', '2018-02-08 06:53:53', '2018-02-08 06:53:53', 'user', 1);
+INSERT INTO `users` (`id`, `fullname`, `mobile`, `username`, `email`, `password`,`created_at`, `updated_at`, `role`, `status`) VALUES
+(1, 'Joseph Dukmak', '1111222233', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL, 'admin', 1),
+(2, 'Deyaa Qreea', '1234123412', 'manu', 'mant1@gmail.com', '9aee390f19345028f03bb16c588550e1','2018-02-08 06:53:53', '2018-02-08 06:53:53', 'user', 1);
 
 --
 -- Indexes for dumped tables

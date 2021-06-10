@@ -45,13 +45,16 @@
 	<!-- Header nav -->	
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#212529;" id="mainNav">
       <div class="container">
-	  <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../../crashin/images/logo00.png" alt="logo" width="80" height="80"/></a>
+	  <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
+          
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
+		  <li class="nav-item">
+			<a href="../index.php" class="nav-link">Home</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><?php echo $_SESSION['fullname']; ?> <?php if($_SESSION['role'] == 'admin'){ echo "(Admin)"; } ?></a>
             </li>
@@ -82,12 +85,13 @@
 						echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">					
 								  <div class="card-block">';
 								  	echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
+									  echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Book Room</a>';
 									 echo 	'<div class="row">
 											<div class="col-4">
 											<h4 class="text-center">Owner Details</h4>';
 											 	echo '<p><b>Owner Name: </b>'.$value['fullname'].'</p>';
 											 	echo '<p><b>Mobile Number: </b>'.$value['mobile'].'</p>';
-											 	echo '<p><b>Alternate Number: </b>'.$value['alternat_mobile'].'</p>';
+											 	echo '<p><b>Alternate Number: </b>'.$value['alternate_mobile'].'</p>';
 											 	echo '<p><b>Email: </b>'.$value['email'].'</p>';
 											 	echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
 											 	if ($value['image'] !== 'uploads/') {
@@ -115,7 +119,7 @@
 												if(isset($value['own'])){
 													echo '<p><b>Available Area: </b>'.$value['area'].'</p>';
 													echo '<p><b>Floor: </b>'.$value['floor'].'</p>';
-													echo '<p><b>Owner/Rented: </b>'.$value['own'].'</p>';
+													echo '<p><b>Owned/Rented: </b>'.$value['own'].'</p>';
 													echo '<p><b>Purpose: </b>'.$value['purpose'].'</p>';
 												}
 												echo '<p><b>Available Rooms: </b>'.$value['rooms'].'</p>';

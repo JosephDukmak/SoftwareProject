@@ -26,8 +26,8 @@
 
 				<div class="col-md-4">
 				  <div class="form-group">
-				    <label for="alternat_mobile">Alternat Mobile</label>
-				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternat_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" value="<?php echo $data['alternat_mobile']?$data['alternat_mobile']:''; ?>">
+				    <label for="alternate_mobile">alternate Mobile</label>
+				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternate_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" value="<?php echo $data['alternate_mobile']?$data['alternate_mobile']:''; ?>">
 				  </div>
 				</div>
 			</div>

@@ -25,8 +25,8 @@
 
 				<div class="col-md-4">
 				  <div class="form-group">
-				    <label for="alternat_mobile">Alternat Mobile</label>
-				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternat_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" name="alternat_mobile">
+				    <label for="alternatee_mobile">Alternatee Mobile</label>
+				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternate_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" name="alternate_mobile">
 				  </div>
 				</div>
 			</div>

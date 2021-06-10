@@ -79,6 +79,8 @@
     .container1 .img1 {
         float: right;
         padding-right:40px;
+        align-items: center;
+
     }
         .container1 .img1 img {
             width:600px;
@@ -87,6 +89,7 @@
 
     .container1 .img2 {
         float: left;
+        align-items: center;
         padding-left: 40px;
         padding-top: 180px;
     }
@@ -382,7 +385,7 @@
 
 
 .qt-background {
-    background: url(../img/bg8.jpg) no-repeat;
+    background: url(../../imgs/bg8.jpg) no-repeat;
     background-size: cover;
     padding: 100px 0;
     background-attachment: fixed;

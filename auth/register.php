@@ -9,43 +9,46 @@
 	require 'PHPMailer/src/SMTP.php';
 
 	if(isset($_POST['register'])) {
+	
 		$errMsg = '';
 
 		// Get data from FROM
+
 		$username = $_POST['username'];
+
+		// check username if exists
+		$query = $connect -> prepare("SELECT * from users where username = ?");
+		$query->execute([$username]);
+		$result = $query->rowCount();
+		if ($result > 0){
+			header('Location: register.php?action=TakenUsername');
+			$errMsg = "Username already exists! please choose another one.";
+		}
+
 		$mobile = $_POST['mobile'];
+
 		$email = $_POST['email'];
+
+			// check email if exists
+			$query = $connect -> prepare("SELECT * from users where email = ?");
+			$query->execute([$email]);
+			$result = $query->rowCount();
+			if ($result > 0){
+				header('Location: register.php?action=TakenEmail');
+				$errMsg = "Email already exists! please choose another one.";
+			}
+
 		$password = $_POST['password'];
+		$c_password = $_POST['c_password'];
+		if ($password != $c_password){
+			header('Location: register.php?action=PasswordsDontMatch');
+			$errMsg = "Both passwords don't match, please try again!";
+		  }
+
 		$fullname = $_POST['fullname'];
 
-		// $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-		// try {
-		//     //Server settings
-		//     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-		//     $mail->isSMTP();                                      // Set mailer to use SMTP
-		//     $mail->Host = 'ssl://smtp.gmail.com:465';  // Specify main and backup SMTP servers
-		//     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-		//     $mail->Username = 'xxxx@gmail.com';                 // SMTP username
-		//     $mail->Password = 'xxxx';                           // SMTP password
-		//     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-		//     $mail->Port = 465;                                    // TCP port to connect to
-
-		//     //Recipients
-		//     $mail->setFrom('xxxxx@gmail.com', 'Mailer');
-		// 	$mail->addAddress($email, 'Name Of the person');     // Add a recipient
-
-		//     //Content
-		//     $mail->isHTML(true);                                  // Set email format to HTML
-		//     $mail->Subject = "Registration successfull $fullname";
-		//     $mail->Body    = "Credentials To login into our site <br> Name: $fullname <br>Email : $email<br> Username: $username <br>Password: $password";
-
-		//    	$mail->send();
-		//    // echo 'Message has been sent';
-		// } catch (Exception $e) {
-		//    // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
-		// }	
-
-			try {
+			if (empty($errMsg)){
+				header('Location: register.php?action=joined');
 				$stmt = $connect->prepare('INSERT INTO users (fullname, mobile, username, email, password) VALUES (:fullname, :mobile, :username, :email, :password)');
 				$stmt->execute(array(
 					':fullname' => $fullname,
@@ -54,16 +57,26 @@
 					':email' => $email,
 					':mobile' => $mobile,
 					));
-				header('Location: register.php?action=joined');
+
+				
 				exit;
 			}
-			catch(PDOException $e) {
-				echo $e->getMessage();
-			}
+			//catch(PDOException $e) {
+			//	echo $e->getMessage();
+			//}
 	}
 
 	if(isset($_GET['action']) && $_GET['action'] == 'joined') {
 		$errMsg = 'Registration successfull. Now you can login';
+	}
+	else if (isset($_GET['action']) && $_GET['action'] == 'TakenUsername'){
+		$errMsg = "Username already exists! please choose another one.";
+	}
+	else if (isset($_GET['action']) && $_GET['action'] == 'TakenEmail'){
+		$errMsg = "Email already exists! please choose another one.";
+	}
+	else if (isset($_GET['action']) && $_GET['action'] == 'PasswordsDontMatch'){
+		$errMsg = "Both passwords don't match, please try again!";
 	}
 ?>
 
@@ -82,7 +95,7 @@
 	<!-- Services -->
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#212529;" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="../index.php">Logo/Home</a>
+	  <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -120,8 +133,8 @@
 							</div>
 							<div class="col-6">
 							  <div class="form-group">
-							    <label for="username">User Name</label>
-							    <input type="text" class="form-control" id="username" placeholder="User Name" name="username" required>
+							    <label for="username">Username</label>
+							    <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
 							  </div>
 						    </div>
 					   </div>
@@ -129,7 +142,7 @@
 					  	    <div class="col-6">
 							  <div class="form-group">
 							    <label for="mobile">Mobile</label>
-							    <input type="text" class="form-control" pattern="^(\d{10})$" id="mobile" title="10 digit mobile number" placeholder="10 digit mobile number" name="mobile" required>
+							    <input type="text" class="form-control" pattern="^(\d{10})$" id="mobile" title="10 digit mobile number" placeholder="10-digit mobile number" name="mobile" required>
 							  </div>
 							 </div>
 							<div class="col-6">					  

@@ -40,7 +40,7 @@
 			$fullname = $_POST['fullname'];
 			$email = $_POST['email'];
 			$mobile = $_POST['mobile'];
-			$alternat_mobile = $_POST['alternat_mobile'];
+			$alternate_mobile = $_POST['alternate_mobile'];
 			$plot_number = $_POST['plot_number'];
 			$country = $_POST['country'];
 			$state = $_POST['state'];
@@ -60,12 +60,12 @@
 			$id = $_POST['id'];
 			$sale = $_POST['sale'];
 			try {
-				$stmt = $connect->prepare('UPDATE room_rental_registrations SET fullname = ?,  email = ?, mobile = ?, alternat_mobile = ?, plot_number = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, sale=?, deposit = ?, description = ?, accommodation = ?, vacant = ?, user_id = ?  WHERE id = ?');
+				$stmt = $connect->prepare('UPDATE room_rental_registrations SET fullname = ?,  email = ?, mobile = ?, alternate_mobile = ?, plot_number = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, sale=?, deposit = ?, description = ?, accommodation = ?, vacant = ?, user_id = ?  WHERE id = ?');
 				$stmt->execute(array(
 					$fullname,
 					$email,
 					$mobile,
-					$alternat_mobile,
+					$alternate_mobile,
 					$plot_number,
 					$rooms,
 				 	$country,
@@ -97,7 +97,7 @@
 			$fullname = $_POST['fullname'];
 			$email = $_POST['email'];
 			$mobile = $_POST['mobile'];
-			$alternat_mobile = $_POST['alternat_mobile'];
+			$alternate_mobile = $_POST['alternate_mobile'];
 			$plot_number = $_POST['plot_number'];
 			$country = $_POST['country'];
 			$state = $_POST['state'];
@@ -122,7 +122,7 @@
 			$ap_number_of_plats = $_POST['ap_number_of_plats'];
 
 			try {
-				$stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET fullname = ?, email = ?, mobile = ?, alternat_mobile = ?, plot_number = ?, apartment_name = ?, ap_number_of_plats = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, deposit = ?, description = ?, accommodation = ?, vacant = ?, user_id = ?, floor = ?, own = ?, area = ?, purpose = ?  WHERE id = ?');
+				$stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET fullname = ?, email = ?, mobile = ?, alternate_mobile = ?, plot_number = ?, apartment_name = ?, ap_number_of_plats = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, deposit = ?, description = ?, accommodation = ?, vacant = ?, user_id = ?, floor = ?, own = ?, area = ?, purpose = ?  WHERE id = ?');
 				
 				// foreach ($_POST['ap_number_of_plats'] as $key => $value) {
 					# code...
@@ -130,7 +130,7 @@
 						$fullname,
 						$email,
 						$mobile,
-						$alternat_mobile,
+						$alternate_mobile,
 						$plot_number,
 						$apartment_name,
 						$ap_number_of_plats,
@@ -175,7 +175,7 @@
 	<!-- Header nav -->	
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#212529;" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="../index.php">Logo/Home</a>
+	  <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
