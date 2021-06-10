@@ -90,7 +90,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="imgs/logo00.png" alt="logo" width="80" height="80"/></a>
+        <a class="navbar-brand js-scroll-trigger" href="index.php"><img src="imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -98,26 +98,35 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
            
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="index.php">Home</a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#search">Search</a>
             </li>
-            
+
             <?php 
               if(empty($_SESSION['username'])){
                 echo '<li class="nav-item">';
                   echo '<a class="nav-link" href="./auth/login.php">Login</a>';
                 echo '</li>';
-              }else{
+
+                echo '<li class="nav-item">';
+              echo '<a class="nav-link" href="./auth/register.php">Register</a>';
+              echo '</li>'; 
+              } else{
                 echo '<li class="nav-item">';
                  echo '<a class="nav-link" href="./auth/dashboard.php">Dashbord</a>';
                echo '</li>';
+
+              echo ' <li class="nav-item">';
+              echo '<a href="auth/logout.php" class="nav-link">Logout</a>';
+              echo' </li>';
               }
             ?>
-            
 
-            <li class="nav-item">
-              <a class="nav-link" href="./auth/register.php">Register</a>
-            </li>
+
 
           </ul>
         </div>
@@ -291,7 +300,14 @@
                 foreach ($data as $key => $value) {           
                   echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">          
                         <div class="card-block">';
-                           echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Book</a>';
+
+                         
+                        if(empty($_SESSION['username'])){
+                            echo '<a class="btn btn-warning float-right" href="auth/login.php">Login to book</a>';
+                        }else{
+                          echo '<a class="btn btn-warning float-right" href="app/checkout.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Book</a>';
+                        }
+                      
                          echo   '<div class="row">
                             <div class="col-4">
                             <h4 class="text-center">Owner Details</h4>';

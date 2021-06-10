@@ -25,7 +25,7 @@
 					$_SESSION['username'] = $data['username'];
 					$_SESSION['fullname'] = $data['fullname'];
 					$_SESSION['role'] = $data['role'];
-					header('Location: dashboard.php');
+					header('Location: ../index.php');
 					exit;
 				}
 				else
@@ -42,7 +42,7 @@
 	<!-- Services -->
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#212529;" id="mainNav">
       <div class="container">
-	  <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
+	  <a class="navbar-brand js-scroll-trigger" href="../index.php"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>

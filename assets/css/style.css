@@ -44,7 +44,7 @@
 }
 
 .awesome-text{
-      color: #fed136 !important;
+      color: #cfa671 !important;
     font-family: 'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive !important;
 
 }
@@ -74,6 +74,7 @@
 
     nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
       margin-left: 0px;
+      
     }
 
     .container1 .img1 {

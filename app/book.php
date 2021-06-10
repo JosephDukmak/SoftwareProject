@@ -60,7 +60,7 @@
 			$id = $_POST['id'];
 			$sale = $_POST['sale'];
 			try {
-				$stmt = $connect->prepare('UPDATE room_rental_registrations SET fullname = ?,  email = ?, mobile = ?, alternate_mobile = ?, plot_number = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, sale=?, deposit = ?, description = ?, accommodation = ?, vacant = ?, user_id = ?  WHERE id = ?');
+				$stmt = $connect->prepare('UPDATE room_rental_registrations SET fullname = ?,  email = ?, mobile = ?, alternate_mobile = ?, plot_number = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, sale=?, deposit = ?, description = ?, accommodation = ?, vacant = 0, user_id = ?  WHERE id = ?');
 				$stmt->execute(array(
 					$fullname,
 					$email,
@@ -122,7 +122,7 @@
 			$ap_number_of_plats = $_POST['ap_number_of_plats'];
 
 			try {
-				$stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET fullname = ?, email = ?, mobile = ?, alternate_mobile = ?, plot_number = ?, apartment_name = ?, ap_number_of_plats = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, deposit = ?, description = ?, accommodation = ?, vacant = ?, user_id = ?, floor = ?, own = ?, area = ?, purpose = ?  WHERE id = ?');
+				$stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET fullname = ?, email = ?, mobile = ?, alternate_mobile = ?, plot_number = ?, apartment_name = ?, ap_number_of_plats = ?, rooms = ?, country = ?, state = ?, city = ?, address = ?, landmark = ?, rent = ?, deposit = ?, description = ?, accommodation = ?, vacant = 0, user_id = ?, floor = ?, own = ?, area = ?, purpose = ?  WHERE id = ?');
 				
 				// foreach ($_POST['ap_number_of_plats'] as $key => $value) {
 					# code...
@@ -194,7 +194,7 @@
     </nav>
 	<!-- end header nav -->
 <?php include '../include/side-nav.php';?>
-<section class="wrapper" style="margin-left: 16%;margin-top: -7%;">
+<section class="wrapper" style="margin-left: 16%;margin-top: -5%;">
 	<?php
 		if (isset($active)) {
 			# code...

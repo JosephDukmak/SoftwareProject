@@ -29,7 +29,7 @@
 	<!-- Header nav -->	
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#212529;" id="mainNav">
       <div class="container">
-	  <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
+	  <a class="navbar-brand js-scroll-trigger" href="../index.php"><img src="../imgs/logo00.png" alt="logo" width="80" height="80"/></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -51,7 +51,7 @@
 		<?php include '../include/side-nav.php';?>
 	</section>
 
-<section class="wrapper" style="margin-left: 16%;margin-top: -23%;">
+<section class="wrapper" style="margin-left: 16%;float: right;">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
