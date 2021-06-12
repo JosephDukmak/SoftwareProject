@@ -149,7 +149,7 @@
 							<h1 class="m-b-20"><strong>Welcome To <br> CrashIn </strong></h1>
 							<p class="m-b-40">Welcome to our World! <br> 
 							Simple life is our concern </p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white nav-link js-scroll-trigger" href="#search">Reservation</a></p>
 						</div>
 					</div>
 				</div>
@@ -162,7 +162,7 @@
 							<h1 class="m-b-20"><strong>Welcome To <br> CrashIn</strong></h1>
 							<p class="m-b-40">Save some cash and earn some! <br> 
 							no need for formal and tedious nonsense!</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white nav-link js-scroll-trigger"  href="#search">Reservation</a></p>
 						</div>
 					</div>
 				</div>
@@ -175,7 +175,7 @@
 							<h1 class="m-b-20"><strong>Welcome To <br> CrashIn</strong></h1>
 							<p class="m-b-40">Have the perfect place for holiday! <br> 
 							with a calm and ordinary house</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white nav-link js-scroll-trigger" href="#search">Reservation</a></p>
 						</div>
 					</div>
 				</div>
@@ -303,10 +303,20 @@
 
                          
                         if(empty($_SESSION['username'])){
+                          if($value['vacant'] == 1){
                             echo '<a class="btn btn-warning float-right" href="auth/login.php">Login to book</a>';
-                        }else{
-                          echo '<a class="btn btn-warning float-right" href="app/checkout.php?id='.$value['id'].'&act=';if(isset($value['ap_number_of_plats'])){ echo "ap"; }else{ echo "indi"; } echo '">Book</a>';
+                        } 
+                      }
+                      else{
+                        if($value['vacant'] == 1){
+                          echo '<a class="btn btn-warning float-right" href="app/checkout.php?id='.$value['id'].'&act=';
+                          if(isset($value['sale']))
+                          { echo "Individual House/Apartment Reservation"; }
+                          else
+                          { echo "Room Reservation"; } 
+                          echo '">Book</a>';
                         }
+                      }
                       
                          echo   '<div class="row">
                             <div class="col-4">
@@ -325,7 +335,7 @@
                             <div class="col-5">
                             <h4 class="text-center">Room Details</h4>';
                               // echo '<p><b>Country: </b>'.$value['country'].'<b> State: </b>'.$value['state'].'<b> City: </b>'.$value['city'].'</p>';
-                              echo '<p><b>Plot Number: </b>'.$value['plot_number'].'</p>';
+                              echo '<p><b>House Number: </b>'.$value['plot_number'].'</p>';
 
                               if(isset($value['sale'])){
                                 echo '<p><b>Sale: </b>'.$value['sale'].'</p>';
@@ -335,7 +345,7 @@
                                   echo '<div class="alert alert-success" role="alert"><p><b>Apartment Name: </b>'.$value['apartment_name'].'</p></div>';
 
                                 if(isset($value['ap_number_of_plats']))
-                                  echo '<div class="alert alert-success" role="alert"><p><b>Plat Number: </b>'.$value['ap_number_of_plats'].'</p></div>';
+                                  echo '<div class="alert alert-success" role="alert"><p><b>Flat Number: </b>'.$value['ap_number_of_plats'].'</p></div>';
 
                               echo '<p><b>Available Rooms: </b>'.$value['rooms'].'</p>';
                               echo '<p><b>Address: </b>'.$value['address'].'</p><p><b> Landmark: </b>'.$value['landmark'].'</p>';
@@ -344,6 +354,8 @@
                             <h4>Other Details</h4>';
                             echo '<p><b>Accommodation: </b>'.$value['accommodation'].'</p>';
                             echo '<p><b>Description: </b>'.$value['description'].'</p>';
+                            echo '<p><b>Rent/Night: </b>'.$value['rent'].' <b>USD</b></p>';
+											echo '<p><b>Deposit: </b>'.$value['deposit'].' <b>USD</b></p>';
                               if($value['vacant'] == 0){ 
                                 echo '<div class="alert alert-danger" role="alert"><p><b>Occupied</b></p></div>';
                               }else{

@@ -3,7 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2018 at 11:23 AM
 -- Server version: 5.7.14
 -- PHP Version: 7.1.9
 
@@ -17,7 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `newrent`
+-- Database: `crashin_db`
 --
 
 -- --------------------------------------------------------
@@ -79,9 +78,9 @@ CREATE TABLE `room_rental_registrations` (
 --
 
 INSERT INTO `room_rental_registrations` (`id`, `fullname`, `mobile`, `alternate_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `sale`, `deposit`, `plot_number`, `rooms`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
-(13, 'Joseph', '2345676567', '98888787', 'admin@admin.com', 'india', 'karnataka', 'Belagavi', 'aaaaaa', '3', '12', '3', '78 nh', '2bhk', 'dsdsd', '4', 'dssd', 'uploads/', NULL, 'zx', 0, '2018-02-16 12:21:43', '2018-02-16 12:21:43', 1),
-(14, 'James', '2345676997', '', 'james@gmail.com', 'Palestine', 'karnataka', 'Belagavi', '', '1232', '12', '33333', '78 nh', '1bhk', 'port road bgm', '', '', 'uploads/', NULL, NULL, 1, '2018-03-09 05:06:43', '2018-03-09 05:06:43', 2),
-(15, 'Jack', '2222222222', '', 'Jack@gmail.com', 'Jordan', 'karnataka', 'Belagavi', '', '1232', '12666', '33333', '78 nh', '1bhk', 'port road bgm', 'wifi', 'good to see', 'uploads/Penguins.jpg', NULL, NULL, 1, '2018-04-04 11:19:09', '2018-04-04 11:19:09', 1);
+(13, 'Joseph', '2345676567', '98888787', 'admin@admin.com', 'Palestine', 'Hebron', 'Hebron', 'aaaaaa', '300', '12', '3', '28d', '2bhk', 'dsdsd', '4', 'dssd', 'uploads/', NULL, 'zx', 0, '2021-04-21 12:21:43', '2021-04-21 12:21:43', 1),
+(14, 'James', '2345676997', '', 'james@gmail.com', 'Palestine', 'Nablus', 'Nablus', '', '400', '0', '200', '78n', '1bhk', 'port road bgm', '', '', 'uploads/', NULL, NULL, 1, '2021-04-22 05:06:43', '2021-04-22 05:06:43', 2),
+(15, 'Jack', '2222222222', '', 'Jack@gmail.com', 'Palestine', 'Jericho', 'Jericho', '', '300', '5%', '250', '90c', '1bhk', 'port road bgm', 'wifi', 'good to see', 'uploads/Penguins.jpg', NULL, NULL, 1, '2021-05-24 11:19:09', '2021-05-24 11:19:09', 3);
 
 -- --------------------------------------------------------
 
@@ -126,7 +125,7 @@ CREATE TABLE `room_rental_registrations_apartment` (
 --
 
 INSERT INTO `room_rental_registrations_apartment` (`id`, `fullname`, `mobile`, `alternate_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `deposit`, `plot_number`, `apartment_name`, `ap_number_of_plats`, `rooms`, `floor`, `purpose`, `own`, `area`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
-(3, 'Jenny', '2345676567', '', 'admin@gmail.com', 'Palestine', 'Ramallah', 'Ramallah', 'Downtown', '1212', '22222', '78 nh', 'mant apartment', '101', '2bhk', '2nd', 'Residential', 'rented', '1sqr feet', 'port road bgm', 'wifi', 'well ', 'uploads/Jellyfish.jpg', NULL, NULL, 1, '2018-04-04 11:20:56', '2018-04-04 11:20:56', 1);
+(3, 'Jenny', '2345676567', '', 'admin@gmail.com', 'Palestine', 'Ramallah', 'Ramallah', 'Downtown', '700', '1000', '78h', 'Jennys apartment', '101', '2bhk', '2nd', 'Residential', 'owned', '1sqr feet', 'port road bgm', 'wifi', 'well ', 'uploads/Jellyfish.jpg', NULL, NULL, 1, '2018-04-27 11:20:56', '2018-04-27 11:20:56', 1);
 
 -- --------------------------------------------------------
 
@@ -152,12 +151,40 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullname`, `mobile`, `username`, `email`, `password`,`created_at`, `updated_at`, `role`, `status`) VALUES
-(1, 'Joseph Dukmak', '1111222233', 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL, 'admin', 1),
-(2, 'Deyaa Qreea', '1234123412', 'manu', 'mant1@gmail.com', '9aee390f19345028f03bb16c588550e1','2018-02-08 06:53:53', '2018-02-08 06:53:53', 'user', 1);
+(1, 'Joseph Dukmak', '1111222233', 'Joseph', 'joseph@crashin.com', '21232f297a57a5a743894a0e4a801fc3', NULL, NULL, 'admin', 1),
+(2, 'Deyaa Qreea', '1234123412', 'Deya', 'deya@gmail.com', '21232f297a57a5a743894a0e4a801fc3','2021-05-08 06:53:53', '2021-05-08 06:53:53', 'user', 1);
 
 --
 -- Indexes for dumped tables
 --
+
+
+--
+-- Table structure for table `booked_rooms`
+--
+
+CREATE TABLE `booked_rooms` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cout` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `booked rooms`
+--
+INSERT INTO `booked_rooms` (`id`, `fullname`, `username`, `mobile`,`email`, `address`,`address2`,`country`,`state`,`city`,`cin`,`cout`,`created_at`) VALUES
+(13, 'Joseph Dukmak', 'Joseph', '1111222233','joseph@crashin.com','P.O. Box 70','City center','Palestine','Bethlehem','Bethlehem' ,'30-May-2021','25-Jun-2021', '2021-05-08 06:53:53');
+
 
 --
 -- Indexes for table `cmps`
@@ -169,9 +196,8 @@ ALTER TABLE `cmps`
 -- Indexes for table `room_rental_registrations`
 --
 ALTER TABLE `room_rental_registrations`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `room_rental_registrations_mobile_unique` (`mobile`),
-  ADD UNIQUE KEY `room_rental_registrations_email_unique` (`email`);
+  ADD PRIMARY KEY (`id`);
+  
 
 --
 -- Indexes for table `room_rental_registrations_apartment`
@@ -188,6 +214,13 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_mobile_unique` (`mobile`),
   ADD UNIQUE KEY `users_username_unique` (`username`);
 
+--
+-- Indexes for table `booked_rooms`
+--
+ALTER TABLE `booked_rooms`
+  ADD PRIMARY KEY (`id`);
+
+  
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -215,3 +248,9 @@ ALTER TABLE `users`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+--
+-- AUTO_INCREMENT for table `booked_rooms`
+--
+ALTER TABLE `booked_rooms`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;

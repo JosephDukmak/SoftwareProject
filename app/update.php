@@ -83,7 +83,8 @@
 					$id
 				));
 
-				header('Location: update.php?action=reg');
+				header('Location: list.php?action=reg');
+				
 				exit;
 			}catch(PDOException $e) {
 				echo $e->getMessage();
@@ -154,7 +155,8 @@
 						$id,
 					));				
 				// }
-				header('Location: update.php?action=reg');
+				header('Location: list.php?action=reg');
+				
 				exit;
 			}catch(PDOException $e) {
 				echo $e->getMessage();
@@ -162,7 +164,7 @@
 	}
 
 	if(isset($_GET['action']) && $_GET['action'] == 'reg') {
-		$errMsg = 'Update successfull. Thank you';
+		echo 'Update successfull. Thank you';
 	}
 			
 		//print_r($data);	

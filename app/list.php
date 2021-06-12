@@ -105,7 +105,7 @@
 											<div class="col-5">
 											<h4 class="text-center">Room Details</h4>';
 												// echo '<p><b>Country: </b>'.$value['country'].'<b> State: </b>'.$value['state'].'<b> City: </b>'.$value['city'].'</p>';
-												echo '<p><b>Plot Number: </b>'.$value['plot_number'].'</p>';
+												echo '<p><b>House Number: </b>'.$value['plot_number'].'</p>';
 
 												if(isset($value['sale'])){
 													echo '<p><b>Sale: </b>'.$value['sale'].'</p>';
@@ -122,13 +122,16 @@
 													echo '<p><b>Owned/Rented: </b>'.$value['own'].'</p>';
 													echo '<p><b>Purpose: </b>'.$value['purpose'].'</p>';
 												}
-												echo '<p><b>Available Rooms: </b>'.$value['rooms'].'</p>';
+												echo '<p><b>Available Rooms: </b>'.$value['rooms'].' </p>';
 											
 										echo '</div>
 											<div class="col-3">
 											<h4>Other Details</h4>';
 											echo '<p><b>Accommodation: </b>'.$value['accommodation'].'</p>';
 											echo '<p><b>Description: </b>'.$value['description'].'</p>';
+
+											echo '<p><b>Rent/Night: </b>'.$value['rent'].' <b>USD</b></p>';
+											echo '<p><b>Deposit: </b>'.$value['deposit'].' <b>USD</b></p>';
 												if($value['vacant'] == 0){ 
 													echo '<div class="alert alert-danger" role="alert"><p><b>Occupied</b></p></div>';
 												}else{

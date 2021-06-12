@@ -6,7 +6,7 @@
 				echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 			}
 		?>
-  		<h2 class="text-center">Register Room</h2>
+  		<h2 class="text-center">Register a whole place</h2>
   		<form action="" method="post" enctype="multipart/form-data">
 		  	 <div class="row">
 		  	 	<div class="col-md-4">
@@ -25,7 +25,7 @@
 
 				<div class="col-md-4">
 				  <div class="form-group">
-				    <label for="alternatee_mobile">Alternatee Mobile</label>
+				    <label for="alternatee_mobile">Alternate Mobile</label>
 				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternate_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" name="alternate_mobile">
 				  </div>
 				</div>
@@ -40,25 +40,27 @@
 				 </div>
 
 				 <div class="col-md-4">
-				  <div class="form-group">
-				    <label for="plot_number">Plot Number/Home Number</label>
-				    <input type="text" class="form-control" id="plot_number" placeholder="Plot Number/Home Number" name="plot_number" required>
-				  </div>
-				 </div>
+			  <div class="form-group">
+			    <label for="address">Address</label>
+			    <input type="address" class="form-control" id="address" placeholder="Address" name="address" required>
+			  </div>
+			   </div>
 
 				 <div class="col-md-4">
 				  <div class="form-group">
-				    <label for="rooms">Available Rooms</label>
-				    <input type="text" class="form-control" id="rooms" placeholder="1BHK/2BHK/3BHK/1RK" name="rooms" required>
+				    <label for="plot_number">House Number</label>
+				    <input type="text" class="form-control" id="plot_number" placeholder="House/Apartment Number" name="plot_number" required>
 				  </div>
 				 </div>
+
 			</div>
 
 			<div class="row">
-				<div class="col-md-4">
+				
+			<div class="col-md-4">
 			  <div class="form-group">
-			    <label for="country">Country</label>
-			    <input type="country" class="form-control" id="country" placeholder="Country" name="country" required>
+			    <label for="city">City</label>
+			    <input type="city" class="form-control" id="city" placeholder="City" name="city" required>
 			  </div>
 			  </div>
 
@@ -68,26 +70,28 @@
 			    <input type="state" class="form-control" id="state" placeholder="State" name="state" required>
 			  </div>
 			  </div>
+
 			  <div class="col-md-4">
 			  <div class="form-group">
-			    <label for="city">City</label>
-			    <input type="city" class="form-control" id="city" placeholder="City" name="city" required>
+			    <label for="country">Country</label>
+			    <input type="country" class="form-control" id="country" placeholder="Country" name="country" required>
 			  </div>
 			  </div>
+			  
 			 </div>
 
 			 <div class="row">
 			 	<div class="col-md-2">
 			 <div class="form-group">
 			    <label for="rent">Rent</label>
-			    <input type="rent" class="form-control" id="rent" placeholder="Rent" name="rent" required>
+			    <input type="rent" class="form-control" id="rent" placeholder="Price of the room in USD" name="rent" required>
 			  </div>
 			  </div>
 
 			  <div class="col-md-2">
 			 <div class="form-group">
 			    <label for="sale">Sale</label>
-			    <input type="sale" class="form-control" id="sale" placeholder="Sale" name="sale">
+			    <input type="sale" class="form-control" id="sale" placeholder="Sale %" name="sale">
 			  </div>
 			  </div>
 
@@ -110,7 +114,7 @@
 			 	<div class="col-md-4">
 			  <div class="form-group">
 			    <label for="description">Description</label>
-			    <input type="description" class="form-control" id="description" placeholder="Description" name="description">
+			    <input type="description" class="form-control" id="description" placeholder="Brief Description" name="description">
 			  </div>
 			   </div>
 			  <div class="col-md-4">
@@ -119,12 +123,13 @@
 			    <input type="landmark" class="form-control" id="landmark" placeholder="landmark" name="landmark">
 			  </div>
 			   </div>
-			  <div class="col-md-4">
-			  <div class="form-group">
-			    <label for="address">Address</label>
-			    <input type="address" class="form-control" id="address" placeholder="Address" name="address" required>
-			  </div>
-			   </div>
+			  
+			   <div class="col-md-4">
+				  <div class="form-group">
+				    <label for="rooms">Available Rooms</label>
+				    <input type="number" class="form-control" id="rooms" placeholder="Nr. of rooms" name="rooms" required>
+				  </div>
+				 </div>
 			    </div>				  
 			  
 			   <div class="row">

@@ -6,7 +6,7 @@
 				echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 			}
 		?>
-  		<h2 class="text-center">Apartment Room</h2>
+  		<h2 class="text-center">Register a room</h2>
   		<form action="" method="POST">
 		  	 <div class="row">
 		  	 	<div class="col-md-4">
@@ -26,8 +26,8 @@
 
 				<div class="col-md-4">
 				  <div class="form-group">
-				    <label for="alternate_mobile">alternate Mobile</label>
-				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternate_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" value="<?php echo $data['alternate_mobile']?$data['alternate_mobile']:''; ?>">
+				    <label for="alternate_mobile">Alternate Mobile</label>
+				    <input type="text" class="form-control" pattern="^(\d{10})$" id="alternate_mobile" title="10 digit mobile number" placeholder="10 digit mobile number" name="alternate_mobile" value="<?php echo $data['alternate_mobile']?$data['alternate_mobile']:''; ?>">
 				  </div>
 				</div>
 			</div>
@@ -41,27 +41,31 @@
 				 </div>
 
 				 <div class="col-md-4">
+			  <div class="form-group">
+			    <label for="address">Address</label>
+			    <input type="address" class="form-control" id="address" placeholder="Address" name="address" value="<?php echo $data['address']?$data['address']:''; ?>" required>
+			  </div>
+			   </div>
+
+				 <div class="col-md-4">
 				  <div class="form-group">
-				    <label for="plot_number">Plot Number/Home Number</label>
+				    <label for="plot_number">House/Apartment Number</label>
 				    <input type="text" class="form-control" id="plot_number" placeholder="Plot Number/Home Number" name="plot_number" value="<?php echo $data['plot_number']?$data['plot_number']:''; ?>" required>
 				  </div>
 				 </div>
 
-				 <div class="col-md-4">
-				  <div class="form-group">
-				    <label for="apartment_name">Apartment Name</label>
-				    <input type="text" class="form-control" id="apartment_name" placeholder="Apartment Name" name="apartment_name" value="<?php echo $data['apartment_name']?$data['apartment_name']:''; ?>" required>
-				  </div>
-				 </div>
+				 
 			</div>
 
 			<div class="row">
-				<div class="col-md-4">
+			<div class="col-md-4">
 			  <div class="form-group">
-			    <label for="country">Country</label>
-			    <input type="country" class="form-control" id="country" placeholder="Country" name="country" value="<?php echo $data['country']?$data['country']:''; ?>" required>
+			    <label for="city">City</label>
+			    <input type="city" class="form-control" id="city" placeholder="City" name="city" value="<?php echo $data['city']?$data['city']:''; ?>" required>
 			  </div>
 			  </div>
+
+			
 
 			  <div class="col-md-4">
 			  <div class="form-group">
@@ -71,13 +75,24 @@
 			  </div>
 			  <div class="col-md-4">
 			  <div class="form-group">
-			    <label for="city">City</label>
-			    <input type="city" class="form-control" id="city" placeholder="City" name="city" value="<?php echo $data['city']?$data['city']:''; ?>" required>
+			    <label for="country">Country</label>
+			    <input type="country" class="form-control" id="country" placeholder="Country" name="country" value="<?php echo $data['country']?$data['country']:''; ?>" required>
 			  </div>
 			  </div>
 			 </div>
 			 
 			 <div class="row">
+			 
+			 <div class="col-md-4">
+				    <div class="form-group">
+					    <label for="ownership">Owned/Rented </label>
+					    <select class="form-control" id="ownership" name="own">
+					      <option value="owner" <?php if($data['own'] == 'owner'){echo 'selected';}?>>Owned</option>
+					      <option value="rented" <?php if($data['own'] == 'rented'){echo 'selected';}?>>Rented</option>
+					    </select>
+					 </div>
+			  	</div>
+
 			 	<div class="col-md-4">
 				 <div class="form-group">
 				    <label for="ap_number_of_plats">Flat Number</label>
@@ -91,14 +106,11 @@
 				  </div>
 				</div>
 				<div class="col-md-4">
-				    <div class="form-group">
-					    <label for="ownership">Owner/Rented </label>
-					    <select class="form-control" id="ownership" name="own">
-					      <option value="owner" <?php if($data['own'] == 'owner'){echo 'selected';}?>>Owner</option>
-					      <option value="rented" <?php if($data['own'] == 'rented'){echo 'selected';}?>>Rented</option>
-					    </select>
-					 </div>
-			  	</div>
+				  <div class="form-group">
+				    <label for="apartment_name">Apartment Name</label>
+				    <input type="text" class="form-control" id="apartment_name" placeholder="Apartment Name" name="apartment_name" value="<?php echo $data['apartment_name']?$data['apartment_name']:''; ?>" required>
+				  </div>
+				 </div>
 			</div>
 
 
@@ -182,12 +194,7 @@
 			    <input type="landmark" class="form-control" id="landmark" placeholder="landmark" name="landmark" value="<?php echo $data['landmark']?$data['landmark']:''; ?>">
 			  </div>
 			   </div>
-			  <div class="col-md-4">
-			  <div class="form-group">
-			    <label for="address">Address</label>
-			    <input type="address" class="form-control" id="address" placeholder="Address" name="address" value="<?php echo $data['address']?$data['address']:''; ?>" required>
-			  </div>
-			   </div>
+			  
 			    </div>				  
 			  
 			    <div class="row">

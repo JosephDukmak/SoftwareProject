@@ -6,7 +6,7 @@
 				echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 			}
 		?>
-  		<h2 class="text-center">Register Room</h2>
+  		<h2 class="text-center">Register a whole place</h2>
   		<form action="" method="POST">
 		  	 <div class="row">
 		  	 	<div class="col-md-4">
@@ -26,8 +26,8 @@
 
 				<div class="col-md-4">
 				  <div class="form-group">
-				    <label for="alternate_mobile">alternate Mobile</label>
-				    <input type="text" class="form-control" id="alternate_mobile" placeholder="alternate Mobile" name="alternate_mobile" value="<?php echo $data['alternate_mobile']?$data['alternate_mobile']:''; ?>">
+				    <label for="alternate_mobile">Alternate Mobile</label>
+				    <input type="text" class="form-control" id="alternate_mobile" placeholder="Alternate Mobile" name="alternate_mobile" value="<?php echo $data['alternate_mobile']?$data['alternate_mobile']:''; ?>">
 				  </div>
 				</div>
 			</div>
@@ -41,27 +41,31 @@
 				 </div>
 
 				 <div class="col-md-4">
-				  <div class="form-group">
-				    <label for="plot_number">Plot Number/Home Number</label>
-				    <input type="text" class="form-control" id="plot_number" placeholder="Plot Number/Home Number" name="plot_number" value="<?php echo $data['plot_number']?$data['plot_number']:''; ?>" required>
-				  </div>
-				 </div>
+			  <div class="form-group">
+			    <label for="address">Address</label>
+			    <input type="address" class="form-control" id="address" placeholder="Address" name="address" value="<?php echo $data['address']?$data['address']:''; ?>" required>
+			  </div>
+			   </div>
 
 				 <div class="col-md-4">
 				  <div class="form-group">
-				    <label for="rooms">Available Rooms</label>
-				    <input type="text" class="form-control" id="rooms" placeholder="1BHK/2BHK/3BHK/1RK" name="rooms" value="<?php echo $data['rooms']?$data['rooms']:''; ?>" required>
+				    <label for="plot_number">House Number</label>
+				    <input type="text" class="form-control" id="plot_number" placeholder="House/Apartment Number" name="plot_number" value="<?php echo $data['plot_number']?$data['plot_number']:''; ?>" required>
 				  </div>
 				 </div>
+
+				 
 			</div>
 
 			<div class="row">
-				<div class="col-md-4">
+			<div class="col-md-4">
 			  <div class="form-group">
-			    <label for="country">Country</label>
-			    <input type="country" class="form-control" id="country" placeholder="Country" name="country" value="<?php echo $data['country']?$data['country']:''; ?>" required>
+			    <label for="city">City</label>
+			    <input type="city" class="form-control" id="city" placeholder="City" name="city" value="<?php echo $data['city']?$data['city']:''; ?>" required>
 			  </div>
 			  </div>
+
+				
 
 			  <div class="col-md-4">
 			  <div class="form-group">
@@ -69,10 +73,11 @@
 			    <input type="state" class="form-control" id="state" placeholder="State" name="state" value="<?php echo $data['state']?$data['state']:''; ?>" required>
 			  </div>
 			  </div>
+			  
 			  <div class="col-md-4">
 			  <div class="form-group">
-			    <label for="city">City</label>
-			    <input type="city" class="form-control" id="city" placeholder="City" name="city" value="<?php echo $data['city']?$data['city']:''; ?>" required>
+			    <label for="country">Country</label>
+			    <input type="country" class="form-control" id="country" placeholder="Country" name="country" value="<?php echo $data['country']?$data['country']:''; ?>" required>
 			  </div>
 			  </div>
 			 </div>
@@ -103,7 +108,7 @@
 
 			  <div class="form-group">
 			    <label for="accommodation">Accommodation</label>
-			    <input type="accommodation" class="form-control" id="accommodation" placeholder="Accommodation" name="accommodation" value="<?php echo $data['accommodation']?$data['accommodation']:''; ?>" required>
+			    <input type="accommodation" class="form-control" id="accommodation" placeholder="Accommodation" name="accommodation" value="<?php echo $data['accommodation']?$data['accommodation']:''; ?>" >
 			  </div>
 			  </div>
 			  </div>
@@ -112,21 +117,21 @@
 			 	<div class="col-md-4">
 			  <div class="form-group">
 			    <label for="description">Description</label>
-			    <input type="description" class="form-control" id="description" placeholder="Description" name="description" value="<?php echo $data['description']?$data['description']:''; ?>" required>
+			    <input type="description" class="form-control" id="description" placeholder="Description" name="description" value="<?php echo $data['description']?$data['description']:''; ?>" >
 			  </div>
 			   </div>
 			  <div class="col-md-4">
 			  <div class="form-group">
 			    <label for="landmark">Landmark</label>
-			    <input type="landmark" class="form-control" id="landmark" placeholder="landmark" name="landmark" value="<?php echo $data['landmark']?$data['landmark']:''; ?>" required>
+			    <input type="landmark" class="form-control" id="landmark" placeholder="landmark" name="landmark" value="<?php echo $data['landmark']?$data['landmark']:''; ?>" >
 			  </div>
 			   </div>
-			  <div class="col-md-4">
-			  <div class="form-group">
-			    <label for="address">Address</label>
-			    <input type="address" class="form-control" id="address" placeholder="Address" name="address" value="<?php echo $data['address']?$data['address']:''; ?>" required>
-			  </div>
-			   </div>
+			   <div class="col-md-4">
+				  <div class="form-group">
+				    <label for="rooms">Available Rooms</label>
+				    <input type="number" class="form-control" id="rooms" placeholder="Nr. of rooms" name="rooms" value="<?php echo $data['rooms']?$data['rooms']:''; ?>" required>
+				  </div>
+				 </div>
 			    </div>				  
 			  
 			   <div class="row">
@@ -142,7 +147,7 @@
 			 	<div class="col-md-4">
 			  <div class="form-group">
 			    <label for="other">Other</label>
-			    <input type="other" class="form-control" id="other" placeholder="Other" name="other" value="<?php echo $data['other']?$data['other']:''; ?>" required>
+			    <input type="other" class="form-control" id="other" placeholder="Other" name="other" value="<?php echo $data['other']?$data['other']:''; ?>">
 			  </div>
 			  </div>
 				<!-- <div class="col-md-4">
