@@ -26,7 +26,7 @@
 					$stmt->execute(array(
 						':id' => $id
 					));
-          $data2 = $connect->prepare("SELECT rent FROM room_rental_registrations_apartment where id = :id ");
+          $data2 = $connect->prepare("SELECT rent FROM room_rental_registrations_apartment where id = :id");
           $data2 ->bindValue(':id', $id);
           $data2->execute();
           $rent = $data2->fetch();
@@ -65,13 +65,17 @@
 
       $fullname = $_POST['fullname'];
       $username = $_POST['username'];
+      
+      if ( isset($_GET['id'])) {
+        $id = $_REQUEST['id'];
+      }
 
 		// check username if exists
 		$query = $connect -> prepare("SELECT * from users where username = ?");
 		$query->execute([$username]);
 		$result = $query->rowCount();
 		if ($result < 1){
-			header('Location: checkout.php?action=InvalidUsername');
+			header('Location: checkout.php?id='.$value['id'].'&act=&action=InvalidUsername');
 			$errMsg = "Username does not exists! please enter a valid username.";
 		}
 
@@ -86,8 +90,8 @@
     $cout = $_POST['cout'];
 
     if (empty($errMsg)){
-      header('Location: checkout.php');
-      $stmt = $connect->prepare('INSERT INTO booked_rooms (fullname, username, mobile, email, address, address2, country, state, zip, cin, cout) VALUES (:fullname, :username, :mobile, :email, :address, :address2, :country, :state, :zip, :cin, :cout)');
+      header('Location: checkout.php?action=joined');
+      $stmt = $connect->prepare('INSERT INTO bookedrooms (fullname, username, mobile, email, address, address2, country, state, zip, cin, cout) VALUES (:fullname, :username, :mobile, :email, :address, :address2, :country, :state, :zip, :cin, :cout)');
       $stmt->execute(array(
         ':fullname' => $fullname,
         ':username' => $username,
@@ -99,16 +103,54 @@
         ':state' => $state,
         ':zip' => $zip,
         ':cin' => $cin,
-        ':cout' => $cout,
-  
-        ));
+        ':cout' => $cout ));
       
       exit;
     }
     
 }
 if(isset($_GET['action']) && $_GET['action'] == 'joined') {
-  $errMsg = 'Reservation successfull. Please contact the owner before arrival.';
+  $errMsg = 'Reservation successful. Please contact the owner before arrival.';
+
+  if(isset($_POST['register_individuals'])) {
+    $errMsg = '';
+    $id = $_POST['id'];
+    $sale = $_POST['sale'];
+    try {
+      $stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET  vacant = 0  WHERE id = ?');
+      $stmt->execute(array(
+       
+        $id
+      ));
+
+      header('Location: list.php?action=reg');
+      
+      exit;
+    }catch(PDOException $e) {
+      echo $e->getMessage();
+    }
+}
+
+
+if(isset($_POST['register_apartment'])) {
+    $errMsg = '';
+    $id = $_POST['id'];
+    try {
+      $stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET  vacant = 0  WHERE id = ?');
+      
+      // foreach ($_POST['ap_number_of_plats'] as $key => $value) {
+        # code...
+        $stmt->execute(array(
+          $id
+        ));				
+      // }
+      header('Location: list.php?action=reg');
+      
+      exit;
+    }catch(PDOException $e) {
+      echo $e->getMessage();
+    }
+}
 }
 else if (isset($_GET['action']) && $_GET['action'] == 'InvalidUsername'){
   $errMsg = "Username does not exists! please enter a valid username.";

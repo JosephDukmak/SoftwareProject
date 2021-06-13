@@ -51,7 +51,7 @@
 		<?php include '../include/side-nav.php';?>
 	</section>
 
-<section class="wrapper" style="margin-left: 16%;float: right;">
+<section class="wrapper" style="margin-left: 16%; margin-top: -15%;">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -65,7 +65,7 @@
 			  		<div class="row">
 				  	    <div class="col-6">
 					  	  <div class="form-group">
-						    <label for="name">Apartment No/Name Room No/Name</label>
+						    <label for="name">Apartment/House owner </label>
 						    <input type="text" class="form-control" id="name" placeholder="Full Name" name="name" required>
 						    <input type="hidden" name="user_id" value="<?php echo $_SESSION['username']; ?>">
 						    <input type="hidden" name="fullname" value="<?php echo $_SESSION['fullname']; ?>">

@@ -64,7 +64,7 @@
 						echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 					}
 				?>
-				<h2>List Of Usres</h2>
+				<h2>List Of Users</h2>
 				<div class="table-responsive text-center">
 					<form action="" method="post">
 						<table class="table table-bordered">
@@ -94,7 +94,7 @@
 						  	?>
 						  </tbody>
 						</table>
-						<input type="textarea" name="message" class="form-control" placeholder="Enter Message(Message Body)" required>
+						<input type="textarea" name="message" class="form-control" placeholder="Enter message here" required>
 						<br>
 						<button type="submit" class="btn btn-success" name='sms_alert' value="sms_alert">Send SMS</button>
 					</form>

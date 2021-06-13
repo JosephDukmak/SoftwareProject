@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>App</title>
-
+    <title>CrashIn</title>
+    <link rel = "icon" href = "../imgs/logo00.png" type = "image/x-icon">
     <!-- Bootstrap core CSS -->
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

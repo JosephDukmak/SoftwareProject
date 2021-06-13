@@ -54,7 +54,7 @@
 						echo '<table class="table table-bordered">';
 						echo '<thead>';
 						echo '<tr>';
-						echo '<th>Apartment/Room</th>';
+						echo '<th>Apartment/House owner</th>';
 						echo '<th>Complaints</th>';
 						echo '<th>Full Name</th>';
 						echo '</tr>';
