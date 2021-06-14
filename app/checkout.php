@@ -7,7 +7,6 @@
     require '../auth/PHPMailer/src/Exception.php';
     require '../auth/PHPMailer/src/PHPMailer.php';
     require '../auth/PHPMailer/src/SMTP.php';
-
 	if(empty($_SESSION['username']))
 		header('Location: login.php');
     $rent = '';
@@ -69,7 +68,7 @@
       if ( isset($_GET['id'])) {
         $id = $_REQUEST['id'];
       }
-
+      
 		// check username if exists
 		$query = $connect -> prepare("SELECT * from users where username = ?");
 		$query->execute([$username]);
@@ -90,8 +89,8 @@
     $cout = $_POST['cout'];
 
     if (empty($errMsg)){
-      header('Location: checkout.php?action=joined');
-      $stmt = $connect->prepare('INSERT INTO bookedrooms (fullname, username, mobile, email, address, address2, country, state, zip, cin, cout) VALUES (:fullname, :username, :mobile, :email, :address, :address2, :country, :state, :zip, :cin, :cout)');
+      
+      $stmt = $connect->prepare('INSERT INTO booked_rooms (fullname, username, mobile, email, address, address2, country, state, zip, cin, cout) VALUES (:fullname, :username, :mobile, :email, :address, :address2, :country, :state, :zip, :cin, :cout)');
       $stmt->execute(array(
         ':fullname' => $fullname,
         ':username' => $username,
@@ -104,54 +103,52 @@
         ':zip' => $zip,
         ':cin' => $cin,
         ':cout' => $cout ));
-      
-      exit;
+        header('Location: checkout.php?action=registered&id='.$value['id'].'&act=');
+        $id = $_POST['id'];
     }
+
+    if(isset($_GET['action']) && $_GET['action'] == 'registered') {
+
+      if ( isset($_GET['id'])) {
+        $id = $_REQUEST['id'];
+      }
+        
+      if ($active == 'Room Reservation') {
+          
+          try {
+           
+
+            $data3 = $connect->prepare('UPDATE room_rental_registrations_apartment SET vacant = 0 WHERE id = :id');
+            $data3 ->bindvalue(':id', $id);
+            $data3->execute();
+          				
+          }catch(PDOException $e) {
+            $errMsg = $e->getMessage();
+          }
+        }
+        else{
+          try{
+
+            $data3 = $connect->prepare('UPDATE room_rental_registrations SET vacant = 0 WHERE id = :id');
+            $data3 ->bindValue(':id', $id);
+            $data3->execute();
+
+          }catch(PDOException $e) {
+            echo $e->getMessage();
+          }			
+        }
+      
+      
+      } 
+  }
     
-}
+     
+
 if(isset($_GET['action']) && $_GET['action'] == 'joined') {
   $errMsg = 'Reservation successful. Please contact the owner before arrival.';
-
-  if(isset($_POST['register_individuals'])) {
-    $errMsg = '';
-    $id = $_POST['id'];
-    $sale = $_POST['sale'];
-    try {
-      $stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET  vacant = 0  WHERE id = ?');
-      $stmt->execute(array(
-       
-        $id
-      ));
-
-      header('Location: list.php?action=reg');
-      
-      exit;
-    }catch(PDOException $e) {
-      echo $e->getMessage();
-    }
 }
+  
 
-
-if(isset($_POST['register_apartment'])) {
-    $errMsg = '';
-    $id = $_POST['id'];
-    try {
-      $stmt = $connect->prepare('UPDATE room_rental_registrations_apartment SET  vacant = 0  WHERE id = ?');
-      
-      // foreach ($_POST['ap_number_of_plats'] as $key => $value) {
-        # code...
-        $stmt->execute(array(
-          $id
-        ));				
-      // }
-      header('Location: list.php?action=reg');
-      
-      exit;
-    }catch(PDOException $e) {
-      echo $e->getMessage();
-    }
-}
-}
 else if (isset($_GET['action']) && $_GET['action'] == 'InvalidUsername'){
   $errMsg = "Username does not exists! please enter a valid username.";
 }
@@ -167,8 +164,8 @@ else if (isset($_GET['action']) && $_GET['action'] == 'InvalidUsername'){
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Checkout</title>
+    <link rel = "icon" href = "../imgs/logo00.png" type = "image/x-icon">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
-
     <!-- Bootstrap core CSS -->
     <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

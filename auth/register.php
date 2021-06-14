@@ -81,17 +81,6 @@
 ?>
 
 <?php include '../include/header.php';?>
-	<!-- <nav class="navbar navbar-inverse">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="../index.php">WebSiteName</a>
-	    </div>
-	    <ul class="nav navbar-nav navbar-right">
-			<li><a href="login.php">Login</a></li>
-			<li><a href="register.php">Register</a></li>
-	    </ul>
-	  </div>
-	</nav> -->
 	<!-- Services -->
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#212529;" id="mainNav">
       <div class="container">
@@ -105,8 +94,7 @@
             <li class="nav-item">
               <a class="nav-link" href="login.php">Login</a>
             </li>
-            <li class="nav-item">
-              <!-- <a class="nav-link" href="register.php">Register</a> -->
+            <li class="nav-item"> 
             </li>
           </ul>
         </div>
@@ -116,7 +104,7 @@
 	<div class="container">
 		<div class="row">				
 			  <div class="col-md-8 mx-auto">
-			  	<div class="alert alert-info" role="alert">
+			  	<div class="alert alert-dark" role="alert">
 			  		<?php
 						if(isset($errMsg)){
 							echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';

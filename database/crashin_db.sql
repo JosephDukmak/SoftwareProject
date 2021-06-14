@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cmps` (
-  `id` int(11) NOT NULL,
+  `id` int(191) NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `cmp` varchar(200) DEFAULT NULL,
   `username` varchar(200) DEFAULT NULL,
@@ -47,7 +47,7 @@ INSERT INTO `cmps` (`id`, `name`, `cmp`, `username`, `fullname`) VALUES
 --
 
 CREATE TABLE `room_rental_registrations` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(191) UNSIGNED NOT NULL,
   `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alternate_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -89,7 +89,7 @@ INSERT INTO `room_rental_registrations` (`id`, `fullname`, `mobile`, `alternate_
 --
 
 CREATE TABLE `room_rental_registrations_apartment` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(191) UNSIGNED NOT NULL,
   `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alternate_mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -134,7 +134,7 @@ INSERT INTO `room_rental_registrations_apartment` (`id`, `fullname`, `mobile`, `
 --
 
 CREATE TABLE `users` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(191) UNSIGNED NOT NULL,
   `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -164,7 +164,7 @@ INSERT INTO `users` (`id`, `fullname`, `mobile`, `username`, `email`, `password`
 --
 
 CREATE TABLE `booked_rooms` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(191) UNSIGNED NOT NULL,
   `fullname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `mobile` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -173,7 +173,7 @@ CREATE TABLE `booked_rooms` (
   `address2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `zip` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cout` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
@@ -182,8 +182,8 @@ CREATE TABLE `booked_rooms` (
 --
 -- Dumping data for table `booked rooms`
 --
-INSERT INTO `booked_rooms` (`id`, `fullname`, `username`, `mobile`,`email`, `address`,`address2`,`country`,`state`,`city`,`cin`,`cout`,`created_at`) VALUES
-(20, 'Joseph Dukmak', 'Joseph', '1111222233','joseph@crashin.com','P.O. Box 70','City center','Palestine','Bethlehem','Bethlehem' ,'30-05-2021','25-06-2021', '2021-05-08 06:53:53');
+INSERT INTO `booked_rooms` (`id`, `fullname`, `username`, `mobile`,`email`, `address`,`address2`,`country`,`state`,`zip`,`cin`,`cout`,`created_at`) VALUES
+(20, 'Joseph Dukmak', 'Joseph', '1111222233','joseph@crashin.com','P.O. Box 70','City center','Palestine','Bethlehem','9090700' ,'2021-05-03','2021-06-25', '2021-05-08 06:53:53');
 
 
 --
@@ -229,22 +229,22 @@ ALTER TABLE `booked_rooms`
 -- AUTO_INCREMENT for table `cmps`
 --
 ALTER TABLE `cmps`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(191) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `room_rental_registrations`
 --
 ALTER TABLE `room_rental_registrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(191) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `room_rental_registrations_apartment`
 --
 ALTER TABLE `room_rental_registrations_apartment`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(191) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(191) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -253,4 +253,4 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booked_rooms`
 --
 ALTER TABLE `booked_rooms`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(191) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;

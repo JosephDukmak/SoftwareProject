@@ -258,7 +258,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Search</h2>
-            <h3 class="section-subheading text-muted">Search rooms or homes for hire.</h3>
+            <h3 class="section-subheading text-muted">Search for rooms/houses to rent.</h3>
           </div>
         </div>
         <div class="row">
@@ -281,12 +281,12 @@
 
                 <div class="col-md-2">
                   <div class="form-group">
-                    <button id="" class="btn btn-success btn-md text-uppercase" name="search" value="search" type="submit">Search</button>
+                    <button id="" class="btn btn-primary btn-md text-uppercase" name="search" value="search" type="submit">Search</button>
                   </div>
                 </div>
               </div>
             </form>
-
+              <br> <br>
             <?php
               if(isset($errMsg)){
                 echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
@@ -310,20 +310,22 @@
                       }
                       else{
                         if($value['vacant'] == 1){
-                          echo '<a class="btn btn-warning float-right" href="app/checkout.php?id='.$value['id'].'&act=';
+                          echo '<a class="btn btn-success float-right" href="app/checkout.php?id='.$value['id'].'&act=';
                           if(isset($value['sale']))
                           { echo "Individual House/Apartment Reservation"; }
                           else
                           { echo "Room Reservation"; } 
                           echo '">Book</a>';
                           
-                          echo '<a class="btn btn-warning float-bottom" href="app/complaint.php">Complaint</a><br><br>';
+                          
                         }
                       }
                       
                          echo   '<div class="row">
+                         
                             <div class="col-4">
                             <h4 class="text-center">Owner Details</h4>';
+                            
                               echo '<p><b>Owner Name: </b>'.$value['fullname'].'</p>';
                               echo '<p><b>Mobile Number: </b>'.$value['mobile'].'</p>';
                               echo '<p><b>Alternate Number: </b>'.$value['alternate_mobile'].'</p>';
@@ -364,10 +366,16 @@
                               }else{
                                 echo '<div class="alert alert-success" role="alert"><p><b>Vacant</b></p></div>';
                               } 
+                              
+                              
                             echo '</div>
-                          </div>              
+                             
+                          </div>  
+                          <a class="btn btn-warning float-right" href="app/complaint.php">Complaint</a><br><br>   
                          </div>
                       </div>';
+                      echo '<br>';echo '<br>';
+
                 }
               ?>              
           </div>

@@ -107,12 +107,12 @@
 					echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
 				}
 			?>
-			<h2>List of Apartment Details</h2>
+			<h2>List of Apartments/Rooms</h2>
 				<?php 
 					foreach ($data as $key => $value) {						
 						echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">					
 								  <div class="card-block">';
-								  	echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
+								  	echo '<a class="btn btn-primary float-right" href="update.php?id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
  
 									 echo 	'<div class="row">
 											<div class="col-4">
@@ -164,15 +164,16 @@
 													echo '<div class="alert alert-danger" role="alert"><p><b>Occupied</b></p></div>';
 												}else{
 													echo '<div class="alert alert-success" role="alert"><p><b>Vacant</b></p></div>';
-												} echo '<br>';echo '<br>';	echo '<br>';	echo '<br>';						
-												  echo '<a class="btn btn-danger " style ="float: right;" href="list.php?action=delete&id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Delete</a>';
-
+												} 				
 											echo '</div>
-										</div>				      
+										</div>	
+										<a class="btn btn-danger " style ="float: right;" href="list.php?action=delete&id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Delete</a>
+										<br><br><br>
+										<a class="btn btn-warning float-right" href="../app/complaint.php">Complaint</a><br><br>		      
 								   </div>
 								   
-								</div>';
-								echo '<a class="btn btn-warning float-right" href="../app/complaint.php">Complaint</a><br><br>';
+								</div><br>';
+								
 								
 					}
 				?>				

@@ -12,6 +12,24 @@
 			$errMsg = $e->getMessage();
 		}	
 		// print_r($data);	
+
+		if(isset($_GET['action']) && $_GET['action'] == 'deleteUser') {
+			
+				if ( isset($_GET['id'])) {
+					$id = $_REQUEST['id'];
+				}					
+				
+					$stmt = $connect->prepare("DELETE FROM users WHERE id= :id");
+					$stmt->bindParam(':id', $id);
+					$stmt->execute();
+		
+		
+		header('Location: users.php?action=UserDeleted');
+			
+	}
+	if(isset($_GET['action']) && $_GET['action'] == 'UserDeleted') {
+		$errMsg = "User Deleted Successfully.";
+	}
 ?>
 <?php include '../include/header.php';?>
 	<!-- Header nav -->	
@@ -55,25 +73,32 @@
 					      <th>Email</th>
 					      <th>Username</th>
 					      <th>Role</th>
-					      <!-- <th>Action</th> -->
+					      <th>Delete User</th>
 					    </tr>
 					  </thead>
 					  <tbody>
 					  	<?php 
 					  		foreach ($data as $key => $value) {
-					  			# code...				  			
+					  			# code...	
+								 			  			
 							   echo '<tr>';
 							      echo '<th scope="row">'.$key.'</th>';
 							      echo '<td>'.$value['fullname'].'</td>';
 							      echo '<td>'.$value['email'].'</td>';
 							      echo '<td>'.$value['username'].'</td>';
 							      echo '<td>'.$value['role'].'</td>';
-							      // echo '<td></td>';
-							   echo '</tr>';
+								  if($value['role'] == 'user'){
+							      echo '<td> <a class="btn btn-danger "  href="users.php?action=deleteUser&id='.$value['id'].'&'; echo '">Remove User</a></td>';
+								  }
+								  else {
+									  echo '<td> </td>';
+								  }
+								  echo '</tr>';
 					  		}
 					  	?>
 					  </tbody>
 					</table>
+					
 				</div>
 			</div>
 		</div>

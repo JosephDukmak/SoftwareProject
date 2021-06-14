@@ -1,6 +1,6 @@
 <!-- <div class="row"> -->			
   <div class="col-md-11 col-xs-12 col-sm-12"><br>  	
-  	<div class="alert alert-info" role="alert">
+  	<div class="alert alert-dark" role="alert">
   		<?php
 			if(isset($errMsg)){
 				echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
