@@ -59,7 +59,7 @@
 		}
 
     if(isset($_POST['checkout'])) {
-	
+      
       $errMsg = '';
 
       $fullname = $_POST['fullname'];
@@ -103,57 +103,37 @@
         ':zip' => $zip,
         ':cin' => $cin,
         ':cout' => $cout ));
-        header('Location: checkout.php?action=registered&id='.$value['id'].'&act=');
-        $id = $_POST['id'];
-    }
 
-    if(isset($_GET['action']) && $_GET['action'] == 'registered') {
+        if ($active == 'Room Reservation') {
+          $id - $_POST['id'];
+            try {
 
-      if ( isset($_GET['id'])) {
-        $id = $_REQUEST['id'];
-      }
-        
-      if ($active == 'Room Reservation') {
-          
-          try {
-           
-
-            $data3 = $connect->prepare('UPDATE room_rental_registrations_apartment SET vacant = 0 WHERE id = :id');
-            $data3 ->bindvalue(':id', $id);
-            $data3->execute();
-          				
-          }catch(PDOException $e) {
-            $errMsg = $e->getMessage();
+              $data3 = $connect->prepare('UPDATE room_rental_registrations_apartment SET vacant = 0 WHERE id = :id');
+              $data3 ->bindvalue(':id', $id);
+              $data3->execute();
+                    
+            }catch(PDOException $e) {
+              $errMsg = $e->getMessage();
+            }
           }
-        }
-        else{
-          try{
-
-            $data3 = $connect->prepare('UPDATE room_rental_registrations SET vacant = 0 WHERE id = :id');
-            $data3 ->bindValue(':id', $id);
-            $data3->execute();
-
-          }catch(PDOException $e) {
-            echo $e->getMessage();
-          }			
-        }
-      
-      
-      } 
-  }
-    
-     
-
-if(isset($_GET['action']) && $_GET['action'] == 'joined') {
-  $errMsg = 'Reservation successful. Please contact the owner before arrival.';
-}
+          else{
+            try{
+              $data4 = $connect->prepare('UPDATE room_rental_registrations SET vacant = 0 WHERE id = :id');
+              $data4 ->bindValue(':id', $id);
+              $data4->execute();
   
+            }catch(PDOException $e) {
+              echo $e->getMessage();
+            }			
+          }
+          header('Location: ../auth/dashboard.php?action=registered');
+        
+    }
+  } 
 
 else if (isset($_GET['action']) && $_GET['action'] == 'InvalidUsername'){
   $errMsg = "Username does not exists! please enter a valid username.";
 }
-
-
     ?>
 <?php include '../include/header.php';?>
  

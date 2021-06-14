@@ -29,6 +29,10 @@
 		':user_id' => $_SESSION['id']
 		));
 	$total_auth_user_rent_ap = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	if(isset($_GET['action']) && $_GET['action'] == 'registered') {
+		$errMsg = 'Reservation successful. Please contact the owner before arrival.';
+	  }
 ?>
 <?php include '../include/header.php';?>	
 	<!-- Header nav -->	
@@ -60,7 +64,12 @@
 		<!-- <div class="container"> -->
 			<!-- <div class="row"> -->
 				<div class="col-md-12">
-					
+				<?php
+					if(isset($errMsg)){
+						echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>';
+					}
+				?>
+				<br>
 					<div class="row">						
 						<?php 
 							if($_SESSION['role'] == 'admin'){ 
