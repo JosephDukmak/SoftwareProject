@@ -39,6 +39,34 @@
 		// print_r($data2);
 		// echo "<br><br><br>";	
 		// print_r($data);	
+
+		if(isset($_GET['action']) && $_GET['action'] == 'delete') {
+			
+			if ( isset($_GET['act'])) {
+				$active = $_REQUEST['act'];
+
+				if ( isset($_GET['id'])) {
+					$id = $_REQUEST['id'];
+				}	
+
+				if ($active === 'ap') { 
+					
+					$stmt = $connect->prepare("DELETE FROM room_rental_registrations_apartment WHERE id= :id");
+					$stmt->bindParam(':id', $id);
+					$stmt->execute();
+		}	else {
+					
+					$stmt = $connect->prepare("DELETE FROM room_rental_registrations WHERE id= :id");
+					$stmt->bindParam(':id', $id);
+					$stmt->execute();
+			}
+		}
+		header('Location: list.php?action=deleted');
+			
+	}
+	if(isset($_GET['action']) && $_GET['action'] == 'deleted') {
+		$errMsg = "Entry Deleted Successfully.";
+	}
 ?>
 <?php include '../include/header.php';?>
 
@@ -85,7 +113,7 @@
 						echo '<div class="card card-inverse card-info mb-3" style="padding:1%;">					
 								  <div class="card-block">';
 								  	echo '<a class="btn btn-warning float-right" href="update.php?id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Edit</a>';
-									  
+ 
 									 echo 	'<div class="row">
 											<div class="col-4">
 											<h4 class="text-center">Owner Details</h4>';
@@ -136,12 +164,16 @@
 													echo '<div class="alert alert-danger" role="alert"><p><b>Occupied</b></p></div>';
 												}else{
 													echo '<div class="alert alert-success" role="alert"><p><b>Vacant</b></p></div>';
-												} 
+												} echo '<br>';echo '<br>';	echo '<br>';	echo '<br>';						
+												  echo '<a class="btn btn-danger " style ="float: right;" href="list.php?action=delete&id='.$value['id'].'&act=';if(!empty($value['own'])){ echo "ap"; }else{ echo "indi"; } echo '">Delete</a>';
+
 											echo '</div>
 										</div>				      
 								   </div>
+								   
 								</div>';
 								echo '<a class="btn btn-warning float-right" href="../app/complaint.php">Complaint</a><br><br>';
+								
 					}
 				?>				
 			</div>
