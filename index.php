@@ -198,9 +198,9 @@
 				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 					<div class="inner-column">
 						<h1>What is <span>CrashIn ?</span></h1>
-						<p>its home/apartment rental that keeps everything very simple 
-						by having the ability to post rooms or booking them, and  all this without being restricted by the rules of regular hotels or rentals, this allow smoother dealing between the room owner and the renter, many things become easier by CRASHING IN Easily!</p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
+						<p>It's a home/room rental website that keeps everything very simple 
+						by having the ability to list rooms and/or having the ability to book any listen property. All of this can be done without being restricted by the rules of regular hotels, CrashIn allows a smoother dealing between the landlord and the renter, and made booking even simpler than ever!</p>
+						
 					</div>
 				</div>
 			</div>
@@ -229,7 +229,7 @@
         <div class ="paragraph1">
        <p> <b> You can find multiple choices wether <span>luxury</span> or</b></p>
         <p><b>you prefer an <span>economical</span> option</b></p>
-        <p><b>and save money and crash in successifuly </b></p>
+        <p><b>and save money and crash in successfully </b></p>
         </div>
 
 	</div>
@@ -333,7 +333,7 @@
                               echo '<p><b>Country: </b>'.$value['country'].'</p><p><b> State: </b>'.$value['state'].'</p><p><b> City: </b>'.$value['city'].'</p>';
                               if ($value['image'] !== 'uploads/') {
                                 # code...
-                                echo '<img src="app/'.$value['image'].'" width="100">';
+                                echo '<img src="app/'.$value['image'].'" width="100" href="app/uploads/'.$value['image'].'"> ';
                               }
 
                           echo '</div>

@@ -78,9 +78,9 @@ CREATE TABLE `room_rental_registrations` (
 --
 
 INSERT INTO `room_rental_registrations` (`id`, `fullname`, `mobile`, `alternate_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `sale`, `deposit`, `plot_number`, `rooms`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
-(13, 'Joseph', '2345676567', '98888787', 'admin@admin.com', 'Palestine', 'Hebron', 'Hebron', 'aaaaaa', '300', '12', '3', '28d', '2', 'dsdsd', '4', 'dssd', 'uploads/', NULL, 'zx', 0, '2021-04-21 12:21:43', '2021-04-21 12:21:43', 1),
-(14, 'James', '2345676997', '', 'james@gmail.com', 'Palestine', 'Nablus', 'Nablus', '', '400', '0', '200', '78n', '3', 'port road bgm', '', '', 'uploads/', NULL, NULL, 1, '2021-04-22 05:06:43', '2021-04-22 05:06:43', 2),
-(15, 'Jack', '2222222222', '', 'Jack@gmail.com', 'Palestine', 'Jericho', 'Jericho', '', '300', '5%', '250', '90c', '1', 'port road bgm', 'wifi', 'good to see', 'uploads/Penguins.jpg', NULL, NULL, 1, '2021-05-24 11:19:09', '2021-05-24 11:19:09', 3);
+(13, 'Joseph', '2345676567', '98888787', 'admin@admin.com', 'Palestine', 'Hebron', 'Hebron', 'aaaaaa', '300', '12', '3', '28d', '2', 'Main Square', '4', 'dssd', 'uploads/Modhumoti_Villa.jpg', NULL, 'zx', 0, '2021-04-21 12:21:43', '2021-04-21 12:21:43', 1),
+(14, 'James', '2345676997', '', 'james@gmail.com', 'Palestine', 'Nablus', 'Nablus', '', '400', '0', '200', '78n', '3', 'Steinhammerstr 71', '', '', 'uploads/g7.jpg', NULL, NULL, 1, '2021-04-22 05:06:43', '2021-04-22 05:06:43', 2),
+(15, 'Jack', '2222222222', '', 'Jack@gmail.com', 'Palestine', 'Jericho', 'Jericho', '', '300', '5%', '250', '90c', '1', 'Zaytoon str', 'wifi', 'good to see', 'uploads/r4.jpg', NULL, NULL, 1, '2021-05-24 11:19:09', '2021-05-24 11:19:09', 3);
 
 -- --------------------------------------------------------
 
@@ -125,7 +125,8 @@ CREATE TABLE `room_rental_registrations_apartment` (
 --
 
 INSERT INTO `room_rental_registrations_apartment` (`id`, `fullname`, `mobile`, `alternate_mobile`, `email`, `country`, `state`, `city`, `landmark`, `rent`, `deposit`, `plot_number`, `apartment_name`, `ap_number_of_plats`, `rooms`, `floor`, `purpose`, `own`, `area`, `address`, `accommodation`, `description`, `image`, `open_for_sharing`, `other`, `vacant`, `created_at`, `updated_at`, `user_id`) VALUES
-(3, 'Jenny', '2345676567', '', 'admin@gmail.com', 'Palestine', 'Ramallah', 'Ramallah', 'Downtown', '700', '1000', '78h', 'Jennys apartment', '101', '2', '2nd', 'Residential', 'owned', '1sqr feet', 'port road bgm', 'wifi', 'well ', 'uploads/Jellyfish.jpg', NULL, NULL, 1, '2018-04-27 11:20:56', '2018-04-27 11:20:56', 1);
+(3, 'Jenny', '2345676567', '', 'admin@gmail.com', 'Palestine', 'Ramallah', 'Ramallah', 'Downtown', '700', '1000', '78h', 'Jennys apartment', '101', '2', '2nd', 'Residential', 'owned', '15sqr feet', 'main st 17', 'wifi', 'well ', 'uploads/g4.jpg', NULL, NULL, 1, '2018-04-27 11:20:56', '2018-04-27 11:20:56', 1),
+(4, 'Deya', '2655676567', '', 'deya@gmail.com', 'Palestine', 'Jerusalem', 'Jerusalem', 'City Center', '350', '100', '45a', 'Deyas apartment', '23', '1', '1st', 'Residential', 'owned', '21sqr feet', 'main square 19', 'wifi,terrace', 'organized ', 'uploads/b23.jpg', NULL, NULL, 1, '2018-04-27 11:20:56', '2018-04-27 11:20:56', 1);
 
 -- --------------------------------------------------------
 
@@ -182,8 +183,8 @@ CREATE TABLE `booked_rooms` (
 --
 -- Dumping data for table `booked rooms`
 --
-INSERT INTO `booked_rooms` (`id`, `fullname`, `username`, `mobile`,`email`, `address`,`address2`,`country`,`state`,`zip`,`cin`,`cout`,`created_at`) VALUES
-(20, 'Joseph Dukmak', 'Joseph', '1111222233','joseph@crashin.com','P.O. Box 70','City center','Palestine','Bethlehem','9090700' ,'2021-05-03','2021-06-25', '2021-05-08 06:53:53');
+INSERT INTO `booked_rooms` (`id`, `fullname`, `username`,`mobile`,`email`, `address`,`address2`,`country`,`state`,`zip`,`cin`,`cout`,`created_at`) VALUES
+(20, 'Joseph Dukmak', 'Joseph','1111222233','joseph@crashin.com','P.O. Box 70','City center','Palestine','Bethlehem','9090700' ,'2021-05-03','2021-06-25', '2021-05-08 06:53:53');
 
 
 --

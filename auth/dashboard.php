@@ -16,6 +16,10 @@
 		$stmt = $connect->prepare('SELECT count(*) as total_rent_apartment FROM room_rental_registrations_apartment');
 		$stmt->execute();
 		$total_rent_apartment = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		$stmt = $connect->prepare('SELECT count(*) as total_booked FROM booked_rooms');
+		$stmt->execute();
+		$total_booked = $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 
 	$stmt = $connect->prepare('SELECT count(*) as total_auth_user_rent FROM room_rental_registrations WHERE user_id = :user_id');
@@ -85,6 +89,15 @@
 								echo '<div class="col-md-3">';
 								echo '<a href="../app/list.php"><div class="alert alert-warning" role="alert">';
 								echo '<b>Rooms for Rent: <span class="badge badge-pill badge-success">'.(intval($total_rent['total_rent'])+intval($total_rent_apartment['total_rent_apartment'])).'</span></b>';
+								echo '</div></a>';
+								echo '</div>';
+							} 
+						?>
+						<?php 
+							if($_SESSION['role'] == 'admin'){ 
+								echo '<div class="col-md-3">';
+								echo '<a href="../app/bookedrooms.php"><div class="alert alert-warning" role="alert">';
+								echo '<b>Reservations made: <span class="badge badge-pill badge-success">'.$total_booked['total_booked'].'</span></b>';
 								echo '</div></a>';
 								echo '</div>';
 							} 
